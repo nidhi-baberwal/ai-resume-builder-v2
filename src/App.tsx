@@ -1,5 +1,7 @@
+import ResumeEditor from "./pages/ResumeEditor";
+
 function App(){
-  return<h1>AI Resume Builder</h1>;
+  return <ResumeEditor />;
 }
 
 export default App;
