@@ -4,6 +4,7 @@ import type { Resume } from "../types/resume";
 import PersonalInfoForm from "../resume/PersonalInfoForm";
 
 export default function ResumeEditor(){
+
     const[resume, setResume] = useState<Resume>({
         id: crypto.randomUUID(),
         personalInfo: {
@@ -26,7 +27,10 @@ export default function ResumeEditor(){
 
     <div className="form-panel">
         <h2>Resume Form</h2>
-        <PersonalInfoForm />
+        <PersonalInfoForm 
+        resume = {resume}
+        setResume = {setResume}
+        />
 
     </div>
 
@@ -39,10 +43,17 @@ export default function ResumeEditor(){
     <div className="preview-panel">
         <h2>Resume Preview</h2>
 
-        <h1>John Smith</h1>
-        <p>Frontend Developer</p>
-        <p>john@gmail.com</p>
-        <p>Switzerland</p>
+        <h1>{resume.personalInfo.fullName}</h1>
+
+        <p>{resume.personalInfo.email}</p>
+
+        <p>{resume.personalInfo.phone}</p>
+
+        <p>{resume.personalInfo.location}</p>
+
+        <p>{resume.personalInfo.linkedin}</p>
+
+        <p>{resume.personalInfo.github}</p>
 
         <hr />
 
