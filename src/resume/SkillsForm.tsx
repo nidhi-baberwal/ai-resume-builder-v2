@@ -14,6 +14,7 @@ export default function SkillsForm({
     const[newSkill, setNewSkill] = useState("");
 
     const addSkill = () => {
+        if(!newSkill.trim()) return;
         setResume({
             ...resume,
             skills: [...resume.skills, newSkill],
@@ -21,6 +22,14 @@ export default function SkillsForm({
 
         setNewSkill("");
     };
+
+    const deleteSkill = (index: number) => {
+        setResume({
+            ...resume,
+            skills: resume.skills.filter(
+                (_, i) => i!== index)
+        })
+    }
 
     return(
         <>
@@ -39,7 +48,19 @@ export default function SkillsForm({
             <button onClick = {addSkill}>
                 Add Skills
             </button>
+
+           <ul>
+                {resume.skills.map((skill, index) => (
+                    <li key={index}>
+                        {skill}
+                        
+                <button onClick={() => deleteSkill(index)}>
+                    Delete
+                </button>
+                </li>
+                ))}
+                </ul>
         </div>
         </>
-    )
+    );
 }
