@@ -5,6 +5,7 @@ import PersonalInfoForm from "../resume/PersonalInfoForm";
 import SummaryForm from "../resume/SummaryForm";
 import EducationForm from "../resume/EducationForm";
 import ExperienceForm from "../resume/ExperienceForm";
+import SkillsForm from "../resume/SkillsForm";
 
 export default function ResumeEditor(){
 
@@ -49,6 +50,12 @@ export default function ResumeEditor(){
         resume = {resume}
         setResume = {setResume}
         />
+
+        <SkillsForm
+        resume = {resume}
+        setResume = {setResume}
+        />
+
     </div>
 
     <div className="toolbar">
@@ -104,6 +111,16 @@ export default function ResumeEditor(){
             <p>{exp.description}</p>
         </div>
        ))}
+
+       <h2>Skills</h2>
+
+        <ul>
+       {resume.skills.map((skill, index) => (
+        <li key={index}>
+            {skill}
+            </li>
+            ))}
+       </ul>
     </div>
 </div>
 
