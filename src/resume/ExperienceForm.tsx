@@ -26,6 +26,17 @@ export default function ExperienceForm({
         });
     }
 
+    const deleteExperience = (index: number) => {
+        const updatedExperience = resume.experience.filter(
+            (_, i) => i!== index
+        );
+
+        setResume({
+            ...resume,
+            experience: updatedExperience,
+        });
+    };
+
     const handleChange = (
         index: number,
         field: string,
@@ -89,6 +100,10 @@ export default function ExperienceForm({
                 onChange={(e) =>
                     handleChange(index, "description", e.target.value)}
                 />
+
+                <button onClick={() => deleteExperience(index)}>
+                 Delete Experience
+               </button>
 
             </div>
          ))}
