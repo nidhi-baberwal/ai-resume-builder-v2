@@ -25,6 +25,15 @@ export default function ProjectsForm({
     });
   };
 
+  const deleteProject = (index: number) => {
+    setResume({
+        ...resume,
+        projects: resume.projects.filter(
+            (_, i) => i !== index 
+        )
+    });
+  }
+
   const handleChange = (
     index: number,
     field: string,
@@ -84,6 +93,10 @@ export default function ProjectsForm({
               handleChange(index, "github", e.target.value)
             }
           />
+
+          <button onClick={() => deleteProject(index)}>
+            Delete Project
+          </button>
         </div>
       ))}
 
