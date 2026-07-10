@@ -1,4 +1,5 @@
 import "../styles/ResumeEditor.css";
+import "../App.css";
 import { useState } from "react";
 import type { Resume } from "../types/resume";
 import PersonalInfoForm from "../resume/PersonalInfoForm";
@@ -73,6 +74,8 @@ export default function ResumeEditor(){
     <div className="preview-panel">
         <h2>Resume Preview</h2>
 
+        <div className="resume-header">
+
         <h1>{resume.personalInfo.fullName}</h1>
 
         <p>{resume.personalInfo.email}</p>
@@ -85,30 +88,32 @@ export default function ResumeEditor(){
 
         <p>{resume.personalInfo.github}</p>
 
-        <hr />
+        </div>
+
+        <div className="resume-content">
 
         <h3>{resume.summary}</h3>
-       
-        <hr />
 
+         <div className="resume-section"> 
         <h2>Education</h2>
 
         {resume.education.map((edu, index) => (
-        <div key={index}>
+        <div className="education-card" key={index}>
         <h4>{edu.degree}</h4>
         <p>{edu.school}</p>
         <p>{edu.fieldOfStudy}</p>
         <p>
         {edu.startDate} - {edu.endDate}
         </p>
-        <br />
        </div>
         ))}
+       </div>
 
+       <div className="resume-section">
        <h2>Experience</h2>
 
        {resume.experience.map((exp, index) => (
-        <div key={index}>
+        <div  className="experience-card" key={index}>
           <h4>{exp.company}</h4>
           <p>{exp.position}</p>
           <p>
@@ -117,30 +122,37 @@ export default function ResumeEditor(){
             <p>{exp.description}</p>
         </div>
        ))}
+       </div>
 
+
+       <div className="resume-section">
        <h2>Skills</h2>
 
         <ul>
        {resume.skills.map((skill, index) => (
-        <li key={index}>
+        <span className="skill-tag" key={index}>
             {skill}
-            </li>
+            </span>
             ))}
        </ul>
+       </div>
 
+    <div className="resume-section">
        <h2>Projects</h2>
 
-       <ul>
+       
         {resume.projects.map((project, index) => (
-            <li key={index}>
+            <div className="project-card" key={index}>
                 <h4>{project.title}</h4>
                 <p>{project.description}</p>
                 <p>{project.technologies}</p>
                 <p>{project.github}</p>
-            </li>
+            </div>
         ))}
-       </ul>
+       
+       </div>
 
+    </div>
     </div>
 </div>
 
