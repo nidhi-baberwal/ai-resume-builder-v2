@@ -6,6 +6,7 @@ import SummaryForm from "../resume/SummaryForm";
 import EducationForm from "../resume/EducationForm";
 import ExperienceForm from "../resume/ExperienceForm";
 import SkillsForm from "../resume/SkillsForm";
+import ProjectsForm from "../resume/ProjectsForm";
 
 export default function ResumeEditor(){
 
@@ -52,6 +53,11 @@ export default function ResumeEditor(){
         />
 
         <SkillsForm
+        resume = {resume}
+        setResume = {setResume}
+        />
+
+        <ProjectsForm
         resume = {resume}
         setResume = {setResume}
         />
@@ -121,6 +127,20 @@ export default function ResumeEditor(){
             </li>
             ))}
        </ul>
+
+       <h2>Projects</h2>
+
+       <ul>
+        {resume.projects.map((project, index) => (
+            <li key={index}>
+                <h4>{project.title}</h4>
+                <p>{project.description}</p>
+                <p>{project.technologies}</p>
+                <p>{project.github}</p>
+            </li>
+        ))}
+       </ul>
+
     </div>
 </div>
 
