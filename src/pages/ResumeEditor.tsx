@@ -1,6 +1,6 @@
 import "../styles/ResumeEditor.css";
 import "../App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { Resume } from "../types/resume";
 import PersonalInfoForm from "../resume/PersonalInfoForm";
 import SummaryForm from "../resume/SummaryForm";
@@ -11,7 +11,14 @@ import ProjectsForm from "../resume/ProjectsForm";
 
 export default function ResumeEditor(){
 
-    const[resume, setResume] = useState<Resume>({
+    const[resume, setResume] = useState<Resume>(() => {
+        const savedResume = localStorage.getItem("resume");
+
+        if(savedResume){
+            return JSON.parse(savedResume);
+        }
+
+        return {
         id: crypto.randomUUID(),
         personalInfo: {
             fullName: "",
@@ -26,7 +33,12 @@ export default function ResumeEditor(){
         education: [],
         experience: [],
         projects:[],
+     };
     });
+
+    useEffect(() => {
+     localStorage.setItem("resume", JSON.stringify(resume));
+    }, [resume]);
 
     return (
         <div className="container">
