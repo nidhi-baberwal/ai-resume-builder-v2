@@ -8,6 +8,7 @@ import EducationForm from "../resume/EducationForm";
 import ExperienceForm from "../resume/ExperienceForm";
 import SkillsForm from "../resume/SkillsForm";
 import ProjectsForm from "../resume/ProjectsForm";
+import ClassicTemplate from "../templates/ClassicTemplate";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
@@ -119,98 +120,14 @@ export default function ResumeEditor(){
     <button onClick = {downloadPDF}>
         Download PDF
         </button>
+  </div>
 
+  <div className="preview-panel">
+    <div ref = {resumeRef}>
+        <ClassicTemplate resume= {resume} />
     </div>
-
-    <div className="preview-panel">
-        <h2>Resume Preview</h2>
-
-        <div ref = {resumeRef}>
-
-        <div className="resume-header">
-
-        <h1>{resume.personalInfo.fullName}</h1>
-
-        <p>{resume.personalInfo.email}</p>
-
-        <p>{resume.personalInfo.phone}</p>
-
-        <p>{resume.personalInfo.location}</p>
-
-        <p>{resume.personalInfo.linkedin}</p>
-
-        <p>{resume.personalInfo.github}</p>
-
-        </div>
-
-        <div className="resume-content">
-
-        <h3>{resume.summary}</h3>
-
-         <div className="resume-section"> 
-        <h2>Education</h2>
-
-        {resume.education.map((edu, index) => (
-        <div className="education-card" key={index}>
-        <h4>{edu.degree}</h4>
-        <p>{edu.school}</p>
-        <p>{edu.fieldOfStudy}</p>
-        <p>
-        {edu.startDate} - {edu.endDate}
-        </p>
-       </div>
-        ))}
-       </div>
-
-       <div className="resume-section">
-       <h2>Experience</h2>
-
-       {resume.experience.map((exp, index) => (
-        <div  className="experience-card" key={index}>
-          <h4>{exp.company}</h4>
-          <p>{exp.position}</p>
-          <p>
-            {exp.startDate} - {exp.endDate}
-            </p>
-            <p>{exp.description}</p>
-        </div>
-       ))}
-       </div>
-
-
-       <div className="resume-section">
-       <h2>Skills</h2>
-
-        <ul>
-       {resume.skills.map((skill, index) => (
-        <span className="skill-tag" key={index}>
-            {skill}
-            </span>
-            ))}
-       </ul>
-       </div>
-
-    <div className="resume-section">
-       <h2>Projects</h2>
-
-       
-        {resume.projects.map((project, index) => (
-            <div className="project-card" key={index}>
-                <h4>{project.title}</h4>
-                <p>{project.description}</p>
-                <p>{project.technologies}</p>
-                <p>{project.github}</p>
-            </div>
-        ))}
-       
-       </div>
-
-       </div>
-
-    </div>
-    </div>
+  </div>
 </div>
-
-    );
+);
 }
 
