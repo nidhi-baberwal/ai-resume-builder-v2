@@ -9,6 +9,7 @@ import ExperienceForm from "../resume/ExperienceForm";
 import SkillsForm from "../resume/SkillsForm";
 import ProjectsForm from "../resume/ProjectsForm";
 import ClassicTemplate from "../templates/ClassicTemplate";
+import "../styles/ClassicTemplate.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
