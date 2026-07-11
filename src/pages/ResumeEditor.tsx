@@ -1,6 +1,6 @@
 import "../styles/ResumeEditor.css";
 import "../App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { Resume } from "../types/resume";
 import PersonalInfoForm from "../resume/PersonalInfoForm";
 import SummaryForm from "../resume/SummaryForm";
@@ -8,8 +8,12 @@ import EducationForm from "../resume/EducationForm";
 import ExperienceForm from "../resume/ExperienceForm";
 import SkillsForm from "../resume/SkillsForm";
 import ProjectsForm from "../resume/ProjectsForm";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 export default function ResumeEditor(){
+
+    const resumeRef = useRef<HTMLDivElement>(null);
 
     const[resume, setResume] = useState<Resume>(() => {
         const savedResume = localStorage.getItem("resume");
@@ -39,6 +43,39 @@ export default function ResumeEditor(){
     useEffect(() => {
      localStorage.setItem("resume", JSON.stringify(resume));
     }, [resume]);
+
+     const downloadPDF = async () => {
+  if (!resumeRef.current) return;
+
+  const canvas = await html2canvas(
+    resumeRef.current
+  );
+
+  const imgData = canvas.toDataURL("image/png");
+
+  const pdf = new jsPDF(
+    "p",
+    "mm",
+    "a4"
+  );
+
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+
+  const pdfHeight =
+    (canvas.height * pdfWidth) /
+    canvas.width;
+
+  pdf.addImage(
+    imgData,
+    "PNG",
+    0,
+    0,
+    pdfWidth,
+    pdfHeight
+  );
+
+  pdf.save("resume.pdf");
+};
 
     return (
         <div className="container">
@@ -79,12 +116,16 @@ export default function ResumeEditor(){
 
     <div className="toolbar">
 
-    <button>Download PDF</button>
+    <button onClick = {downloadPDF}>
+        Download PDF
+        </button>
 
     </div>
 
     <div className="preview-panel">
         <h2>Resume Preview</h2>
+
+        <div ref = {resumeRef}>
 
         <div className="resume-header">
 
@@ -162,6 +203,8 @@ export default function ResumeEditor(){
             </div>
         ))}
        
+       </div>
+
        </div>
 
     </div>
