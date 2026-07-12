@@ -9,6 +9,7 @@ import ExperienceForm from "../resume/ExperienceForm";
 import SkillsForm from "../resume/SkillsForm";
 import ProjectsForm from "../resume/ProjectsForm";
 import ClassicTemplate from "../templates/ClassicTemplate";
+import ModernTemplate from "../templates/ModernTemplate";
 import "../styles/ClassicTemplate.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -16,6 +17,9 @@ import jsPDF from "jspdf";
 export default function ResumeEditor(){
 
     const resumeRef = useRef<HTMLDivElement>(null);
+
+    const [template, setTemplate] = useState<
+    "classic" | "modern" >("classic");
 
     const[resume, setResume] = useState<Resume>(() => {
         const savedResume = localStorage.getItem("resume");
@@ -118,16 +122,37 @@ export default function ResumeEditor(){
 
     <div className="toolbar">
 
-    <button onClick = {downloadPDF}>
-        Download PDF
-        </button>
-  </div>
+  <button
+    onClick={() => setTemplate("classic")}
+  >
+    Classic
+  </button>
 
-  <div className="preview-panel">
-    <div ref = {resumeRef}>
-        <ClassicTemplate resume= {resume} />
-    </div>
+  <button
+    onClick={() => setTemplate("modern")}
+  >
+    Modern
+  </button>
+
+  <button onClick={downloadPDF}>
+    Download PDF
+  </button>
+
+</div>
+
+ <div className="preview-panel">
+  <div ref={resumeRef}>
+
+    {template === "classic" && (
+      <ClassicTemplate resume={resume} />
+    )}
+
+    {template === "modern" && (
+      <ModernTemplate resume={resume} />
+    )}
+
   </div>
+</div>
 </div>
 );
 }
