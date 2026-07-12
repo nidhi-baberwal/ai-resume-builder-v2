@@ -11,6 +11,7 @@ import ProjectsForm from "../resume/ProjectsForm";
 import ClassicTemplate from "../templates/ClassicTemplate";
 import ModernTemplate from "../templates/ModernTemplate";
 import "../styles/ClassicTemplate.css";
+import "../styles/ModernTemplate.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 

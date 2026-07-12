@@ -1,0 +1,121 @@
+/*Modern Resume Template*/
+
+.resume-card {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  margin: 20px auto;
+  padding: 0;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/*Header*/
+
+.modern-header {
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  text-align: center;
+  padding: 35px;
+}
+
+.modern-header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.modern-header p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+/*Sections*/
+
+.resume-card section {
+  padding: 18px 35px;
+}
+
+.resume-card h2 {
+  color: #2563eb;
+  font-size: 20px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 6px;
+}
+
+.resume-card h3 {
+  margin: 0;
+  color: #222;
+  font-size: 18px;
+}
+
+.resume-card strong {
+  color: #555;
+  display: block;
+  margin-top: 4px;
+}
+
+.resume-card p {
+  margin: 6px 0;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/*Skills*/
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background: #2563eb;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/*Experience*/
+
+.resume-card section div {
+  margin-bottom: 20px;
+}
+
+/*Education*/
+
+.resume-card section div:last-child {
+  margin-bottom: 0;
+}
+
+/*Projects*/
+
+.resume-card a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.resume-card a:hover {
+  text-decoration: underline;
+}
+
+/*PDF Friendly*/
+
+@media print {
+  .resume-card {
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+    min-height: auto;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}
