@@ -13,6 +13,7 @@ import ModernTemplate from "../templates/ModernTemplate";
 import ATSTemplate from "../templates/ATSTemplate";
 import "../styles/ClassicTemplate.css";
 import "../styles/ModernTemplate.css";
+import "../styles/ATSTemplate.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 

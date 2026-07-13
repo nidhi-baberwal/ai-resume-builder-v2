@@ -15,6 +15,18 @@ export default function ModernTemplate({ resume }: Props) {
         </p>
 
         <p>{resume.personalInfo.location}</p>
+
+         {resume.personalInfo.linkedin && (
+         <p>
+          <strong>LinkedIn:</strong> {resume.personalInfo.linkedin}
+         </p>
+        )}
+
+         {resume.personalInfo.github && (
+         <p>
+         <strong>GitHub:</strong> {resume.personalInfo.github}
+        </p>
+        )}
       </header>
 
       {resume.summary && (

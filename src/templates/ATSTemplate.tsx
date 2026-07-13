@@ -29,6 +29,18 @@ export default function ATSTemplate({ resume }: Props) {
               <span>{resume.personalInfo.location}</span>
             </>
           )}
+
+           {resume.personalInfo.linkedin && (
+            <p>
+            <strong>LinkedIn:</strong> {resume.personalInfo.linkedin}
+           </p>
+          )}
+
+           {resume.personalInfo.github && (
+           <p>
+            <strong>GitHub:</strong> {resume.personalInfo.github}
+          </p>
+          )}
         </div>
       </header>
 
