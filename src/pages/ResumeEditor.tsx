@@ -10,6 +10,7 @@ import SkillsForm from "../resume/SkillsForm";
 import ProjectsForm from "../resume/ProjectsForm";
 import ClassicTemplate from "../templates/ClassicTemplate";
 import ModernTemplate from "../templates/ModernTemplate";
+import ATSTemplate from "../templates/ATSTemplate";
 import "../styles/ClassicTemplate.css";
 import "../styles/ModernTemplate.css";
 import html2canvas from "html2canvas";
@@ -20,7 +21,7 @@ export default function ResumeEditor(){
     const resumeRef = useRef<HTMLDivElement>(null);
 
     const [template, setTemplate] = useState<
-    "classic" | "modern" >("classic");
+    "classic" | "modern" | "ATS" >("classic");
 
     const[resume, setResume] = useState<Resume>(() => {
         const savedResume = localStorage.getItem("resume");
@@ -135,6 +136,12 @@ export default function ResumeEditor(){
     Modern
   </button>
 
+  <button
+    onClick={() => setTemplate("ATS")}
+  >
+    ATS
+  </button>
+
   <button onClick={downloadPDF}>
     Download PDF
   </button>
@@ -150,6 +157,10 @@ export default function ResumeEditor(){
 
     {template === "modern" && (
       <ModernTemplate resume={resume} />
+    )}
+
+    {template === "ATS" && (
+      <ATSTemplate resume={resume} />
     )}
 
   </div>
