@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Resume } from "../types/resume";
+import type { Resume } from "../../types/resume";
 
 interface SkillsFormProps{
     resume: Resume;

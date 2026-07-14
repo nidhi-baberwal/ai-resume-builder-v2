@@ -1,4 +1,4 @@
-import type { Resume } from "../types/resume";
+import type { Resume } from "../../types/resume";
 
 type Props = {
   resume: Resume;

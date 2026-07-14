@@ -2,20 +2,18 @@ import "../styles/ResumeEditor.css";
 import "../App.css";
 import { useState, useEffect, useRef } from "react";
 import type { Resume } from "../types/resume";
-import PersonalInfoForm from "../resume/PersonalInfoForm";
-import SummaryForm from "../resume/SummaryForm";
-import EducationForm from "../resume/EducationForm";
-import ExperienceForm from "../resume/ExperienceForm";
-import SkillsForm from "../resume/SkillsForm";
-import ProjectsForm from "../resume/ProjectsForm";
-import ClassicTemplate from "../templates/ClassicTemplate";
-import ModernTemplate from "../templates/ModernTemplate";
-import ATSTemplate from "../templates/ATSTemplate";
+import PersonalInfoForm from "../components/resume/PersonalInfoForm";
+import SummaryForm from "../components/resume/SummaryForm";
+import EducationForm from "../components/resume/EducationForm";
+import ExperienceForm from "../components/resume/ExperienceForm";
+import SkillsForm from "../components/resume/SkillsForm";
+import ProjectsForm from "../components/resume/ProjectsForm";
 import "../styles/ClassicTemplate.css";
 import "../styles/ModernTemplate.css";
 import "../styles/ATSTemplate.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import ResumePreview from "../components/templates/ResumePreview";
 
 export default function ResumeEditor(){
 
@@ -147,25 +145,14 @@ export default function ResumeEditor(){
     Download PDF
   </button>
 
-</div>
-
- <div className="preview-panel">
-  <div ref={resumeRef}>
-
-    {template === "classic" && (
-      <ClassicTemplate resume={resume} />
-    )}
-
-    {template === "modern" && (
-      <ModernTemplate resume={resume} />
-    )}
-
-    {template === "ATS" && (
-      <ATSTemplate resume={resume} />
-    )}
-
   </div>
-</div>
+
+  <ResumePreview
+  template={template}
+  resume={resume}
+  resumeRef={resumeRef}
+  />
+
 </div>
 );
 }
