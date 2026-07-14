@@ -1,6 +1,4 @@
-/* ===========================
-   GLOBAL
-=========================== */
+/*GLOBAL*/
 
 * {
   margin: 0;
@@ -14,9 +12,7 @@ body {
   color: #333;
 }
 
-/* ===========================
-   LAYOUT
-=========================== */
+/*LAYOUT*/
 
 .container {
   display: grid;
@@ -26,9 +22,7 @@ body {
   align-items: flex-start;
 }
 
-/* ===========================
-   FORM PANEL
-=========================== */
+/*FORM PANEL*/
 
 .form-panel {
   background: #fff;
@@ -53,9 +47,7 @@ body {
   border-left: 5px solid #2563eb;
 }
 
-/* ===========================
-   INPUTS
-=========================== */
+/*INPUTS*/
 
 input,
 textarea,
@@ -88,9 +80,7 @@ label {
   color: #374151;
 }
 
-/* ===========================
-   BUTTONS
-=========================== */
+/*BUTTONS*/
 
 button {
   background: #2563eb;
@@ -110,9 +100,7 @@ button:hover {
   box-shadow: 0 8px 20px rgba(37, 99, 235, .3);
 }
 
-/* ===========================
-   TOOLBAR
-=========================== */
+/*TOOLBAR*/
 
 .toolbar {
   position: sticky;
@@ -125,9 +113,7 @@ button:hover {
   width: 100%;
 }
 
-/* ===========================
-   PREVIEW PANEL
-=========================== */
+/*PREVIEW PANEL*/
 
 .preview-panel {
   background: white;
@@ -139,9 +125,7 @@ button:hover {
   box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
 }
 
-/* ===========================
-   RESUME HEADER
-=========================== */
+/*RESUME HEADER*/
 
 .resume-header {
   background: linear-gradient(135deg, #2563eb, #1e40af);
@@ -165,9 +149,7 @@ button:hover {
   opacity: .95;
 }
 
-/* ===========================
-   RESUME BODY
-=========================== */
+/*RESUME BODY*/
 
 .resume-content {
   padding: 35px;
@@ -204,9 +186,7 @@ button:hover {
   margin-bottom: 8px;
 }
 
-/* ===========================
-   SKILL TAGS
-=========================== */
+/*SKILL TAGS*/
 
 .skill-tag {
   display: inline-block;
@@ -218,9 +198,7 @@ button:hover {
   font-size: 14px;
 }
 
-/* ===========================
-   PROJECT CARD
-=========================== */
+/*PROJECT CARD*/
 
 .project-card {
   border: 1px solid #e5e7eb;
@@ -235,9 +213,7 @@ button:hover {
   box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
 }
 
-/* ===========================
-   EDUCATION CARD
-=========================== */
+/*EDUCATION CARD*/
 
 .education-card,
 .experience-card {
@@ -246,9 +222,7 @@ button:hover {
   margin-bottom: 20px;
 }
 
-/* ===========================
-   SCROLLBAR
-=========================== */
+/*SCROLLBAR*/
 
 .form-panel::-webkit-scrollbar {
   width: 8px;
@@ -259,9 +233,7 @@ button:hover {
   border-radius: 10px;
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+/*RESPONSIVE*/
 
 @media (max-width: 1200px) {
 
@@ -279,4 +251,5 @@ button:hover {
     min-height: auto;
   }
 }
+
 

@@ -14,6 +14,7 @@ import "../styles/ATSTemplate.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import ResumePreview from "../components/templates/ResumePreview";
+import TemplateToolbar from "../components/resume/TemplateToolbar";
 
 export default function ResumeEditor(){
 
@@ -121,25 +122,12 @@ export default function ResumeEditor(){
 
     </div>
 
-    <div className="toolbar">
-
-  <button
-    onClick={() => setTemplate("classic")}
-  >
-    Classic
-  </button>
-
-  <button
-    onClick={() => setTemplate("modern")}
-  >
-    Modern
-  </button>
-
-  <button
-    onClick={() => setTemplate("ATS")}
-  >
-    ATS
-  </button>
+<div className="toolbar-panel">
+  
+    <TemplateToolbar
+  template = {template}
+  setTemplate = {setTemplate}
+  />
 
   <button onClick={downloadPDF}>
     Download PDF
@@ -148,9 +136,9 @@ export default function ResumeEditor(){
   </div>
 
   <ResumePreview
-  template={template}
-  resume={resume}
-  resumeRef={resumeRef}
+  template = {template}
+  resume = {resume}
+  resumeRef = {resumeRef}
   />
 
 </div>
