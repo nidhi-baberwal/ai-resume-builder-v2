@@ -15,6 +15,8 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import ResumePreview from "../components/templates/ResumePreview";
 import TemplateToolbar from "../components/resume/TemplateToolbar";
+import ATSScore from "../components/ats/ATSScore";
+import { checkATS } from "../utils/checkATS";
 
 export default function ResumeEditor(){
 
@@ -51,6 +53,8 @@ export default function ResumeEditor(){
     useEffect(() => {
      localStorage.setItem("resume", JSON.stringify(resume));
     }, [resume]);
+
+    const atsResult = checkATS(resume);
 
      const downloadPDF = async () => {
   if (!resumeRef.current) return;
@@ -123,7 +127,7 @@ export default function ResumeEditor(){
     </div>
 
 <div className="toolbar-panel">
-  
+
     <TemplateToolbar
   template = {template}
   setTemplate = {setTemplate}
@@ -134,6 +138,10 @@ export default function ResumeEditor(){
   </button>
 
   </div>
+
+  <ATSScore 
+  result={atsResult}
+  />
 
   <ResumePreview
   template = {template}
