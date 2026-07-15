@@ -11,6 +11,7 @@ import ProjectsForm from "../components/resume/ProjectsForm";
 import "../styles/ClassicTemplate.css";
 import "../styles/ModernTemplate.css";
 import "../styles/ATSTemplate.css";
+import "../styles/ATSScore.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import ResumePreview from "../components/templates/ResumePreview";

@@ -1,0 +1,51 @@
+/* ===========================
+   ATS SCORE CARD
+=========================== */
+
+.ats-score-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.ats-score-card h2 {
+  color: #2563eb;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.ats-score {
+  font-size: 42px;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 20px;
+}
+
+.ats-score-card h3 {
+  color: #374151;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.suggestions-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.suggestions-list li {
+  color: #4b5563;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.success-message {
+  color: #16a34a;
+  font-weight: 600;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  padding: 12px;
+  border-radius: 8px;
+}
