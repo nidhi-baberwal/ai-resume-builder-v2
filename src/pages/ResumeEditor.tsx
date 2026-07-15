@@ -140,6 +140,8 @@ export default function ResumeEditor(){
 
   </div>
 
+
+  <div className="preview-column">
   <ATSScore 
   result={atsResult}
   />
@@ -149,6 +151,7 @@ export default function ResumeEditor(){
   resume = {resume}
   resumeRef = {resumeRef}
   />
+  </div>
 
 </div>
 );

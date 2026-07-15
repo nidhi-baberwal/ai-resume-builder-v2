@@ -16,6 +16,8 @@ resumeRef,
 } : ResumePreviewProps) {
     return(
      <div className="preview-panel">
+
+      <h2>Template: {template}</h2>
   <div ref={resumeRef}>
 
     {template === "classic" && (
