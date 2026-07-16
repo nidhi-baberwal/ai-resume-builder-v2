@@ -82,7 +82,7 @@ export function checkATS(resume: Resume): ATSResult {
   }
 
   return {
-    score,
+    score: Math.min(score, 100),
     suggestions,
   };
 }
