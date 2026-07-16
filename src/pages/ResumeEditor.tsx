@@ -23,6 +23,10 @@ export default function ResumeEditor(){
 
     const resumeRef = useRef<HTMLDivElement>(null);
 
+    const [suggestions, setSuggestions] = useState<string[]>([]);
+
+    const [loadingAI, setLoadingAI] = useState(false);
+
     const [template, setTemplate] = useState<
     "classic" | "modern" | "ATS" >("classic");
 
@@ -90,6 +94,41 @@ export default function ResumeEditor(){
   pdf.save("resume.pdf");
 };
 
+const handleImproveResume = async () => {
+
+    try {
+
+      setLoadingAI(true);
+
+      const response = await fetch(
+        "http://localhost:5000/api/improve-resume",
+        {
+          method: "POST",
+          headers:{
+            "Content-Type":"application/json",
+          },
+          body: JSON.stringify(resume),
+        }
+      );
+
+
+      const data = await response.json();
+
+      setSuggestions(data.suggestions);
+
+
+    } catch(error){
+
+      console.log(error);
+
+    } finally {
+
+      setLoadingAI(false);
+
+    }
+
+};
+
     return (
         <div className="container">
 
@@ -136,6 +175,10 @@ export default function ResumeEditor(){
 
   <button onClick={downloadPDF}>
     Download PDF
+  </button>
+
+  <button onClick={handleImproveResume}>
+    Improve Resume with AI
   </button>
 
   </div>
