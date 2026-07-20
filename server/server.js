@@ -67,6 +67,58 @@ app.post("/api/summary", async(req,res)=>{
 
 });
 
+app.post("/api/improve-resume", async(req, res) => {
+  try{
+
+    const resume = res.body;
+
+    const prompt = `
+    You are an expert resume Writer.
+
+    Analyze the following resume and provide improvment suggestions.
+
+    Resume:
+    ${JSON.stringify(resume, null, 2)}
+
+    Return only a JSON array of strings.
+
+    Example:
+    ["Add more achievements.",
+    "Improve professional summary.",
+    "Include more technical keywords." 
+    ]
+    `;
+
+    const completion = await client.chat.completions.create({
+
+      model: "gpt-4.1-mini",
+
+      messages: [
+        {
+          role: "user",
+          content: prompt,
+        },
+      ],
+
+    });
+
+    const text = completion.choices[0].message.content;
+
+    res.json({
+      suggestions: JSON.parse(text),
+    });
+
+  } catch(error){
+    console.error(error);
+
+    res.status(500).json({
+      suggestions: [
+        "Unable to generate suggestions."
+      ],
+    });
+  }
+});
+
 
 app.listen(5000,()=>{
   console.log("Server running on port 5000");

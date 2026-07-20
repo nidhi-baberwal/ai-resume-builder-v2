@@ -177,8 +177,11 @@ const handleImproveResume = async () => {
     Download PDF
   </button>
 
-  <button onClick={handleImproveResume}>
-    Improve Resume with AI
+  <button 
+  onClick={handleImproveResume}
+  disabled={loadingAI}
+  >
+    {loadingAI ? "Improving..." : "Improve Resume with AI"}
   </button>
 
   </div>
