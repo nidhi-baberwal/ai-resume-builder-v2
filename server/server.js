@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import OpenAI from "openai";
+import Groq from "groq-sdk";
 
 dotenv.config();
 
@@ -11,8 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+const client = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
 });
 
 
@@ -28,8 +28,8 @@ app.post("/api/summary", async(req,res)=>{
     const {skills, projects} = req.body;
 
 
-    /* const response = await client.chat.completions.create({
-      model: "gpt-4.1-mini",
+     const response = await client.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
       messages:[
         {
           role:"system",
@@ -45,7 +45,7 @@ app.post("/api/summary", async(req,res)=>{
           `
         }
       ],
-    }); */
+    }); 
 
     console.log("Received", skills, projects);
 
@@ -70,7 +70,7 @@ app.post("/api/summary", async(req,res)=>{
 app.post("/api/improve-resume", async(req, res) => {
   try{
 
-    console.log("Rrquest receieved");
+    console.log("Request receieved");
 
     const resume = req.body;
 
@@ -95,7 +95,7 @@ app.post("/api/improve-resume", async(req, res) => {
 
     const completion = await client.chat.completions.create({
 
-      model: "gpt-4.1-mini",
+     model: "llama-3.3-70b-versatile",
 
       messages: [
         {
@@ -112,7 +112,7 @@ app.post("/api/improve-resume", async(req, res) => {
       suggestions: JSON.parse(text),
     });
 
-    console.log("openAI request receieved");
+    console.log("Groq request received");
 
   } catch(error){
     console.error(error);
