@@ -184,6 +184,28 @@ const handleImproveResume = async () => {
     {loadingAI ? "Improving..." : "Improve Resume with AI"}
   </button>
 
+  {suggestions.length > 0 && (
+
+<div className="ai-suggestions">
+
+<h3>AI Suggestions</h3>
+
+<ul>
+
+{suggestions.map((item, index) => (
+
+<li key={index}>
+  {item}
+</li>
+
+))}
+
+</ul>
+
+</div>
+
+)}
+
   </div>
 
 

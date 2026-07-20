@@ -70,7 +70,11 @@ app.post("/api/summary", async(req,res)=>{
 app.post("/api/improve-resume", async(req, res) => {
   try{
 
-    const resume = res.body;
+    console.log("Rrquest receieved");
+
+    const resume = req.body;
+
+    console.log(resume);
 
     const prompt = `
     You are an expert resume Writer.
@@ -107,6 +111,8 @@ app.post("/api/improve-resume", async(req, res) => {
     res.json({
       suggestions: JSON.parse(text),
     });
+
+    console.log("openAI request receieved");
 
   } catch(error){
     console.error(error);

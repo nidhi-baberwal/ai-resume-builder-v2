@@ -131,6 +131,26 @@ button:hover {
   gap: 20px;
 }
 
+.ai-suggestions{
+    margin-top:20px;
+    padding:20px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.ai-suggestions h3{
+    margin-bottom:10px;
+}
+
+.ai-suggestions ul{
+    padding-left:20px;
+}
+
+.ai-suggestions li{
+    margin-bottom:10px;
+}
+
 /*RESUME HEADER*/
 
 .resume-header {
