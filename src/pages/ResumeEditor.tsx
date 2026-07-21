@@ -18,6 +18,7 @@ import ResumePreview from "../components/templates/ResumePreview";
 import TemplateToolbar from "../components/resume/TemplateToolbar";
 import ATSScore from "../components/ats/ATSScore";
 import { checkATS } from "../utils/checkATS";
+import CoverLetter from "../components/coverLetter/CoverLetter";
 
 export default function ResumeEditor(){
 
@@ -206,6 +207,10 @@ const handleImproveResume = async () => {
 
 )}
 
+<CoverLetter
+resume={resume}
+/>
+
   </div>
 
 
@@ -219,6 +224,7 @@ const handleImproveResume = async () => {
   resume = {resume}
   resumeRef = {resumeRef}
   />
+
   </div>
 
 </div>
