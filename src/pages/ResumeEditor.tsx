@@ -206,12 +206,7 @@ const handleImproveResume = async () => {
 </div>
 
 )}
-
-<CoverLetter
-resume={resume}
-/>
-
-  </div>
+</div>
 
 
   <div className="preview-column">
@@ -225,8 +220,10 @@ resume={resume}
   resumeRef = {resumeRef}
   />
 
+  <CoverLetter
+  resume={resume}
+  />
   </div>
-
 </div>
 );
 }

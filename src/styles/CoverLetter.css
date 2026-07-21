@@ -1,0 +1,97 @@
+.cover-letter-container {
+  background: #ffffff;
+  padding: 24px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cover-letter-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cover-letter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cover-letter-form label {
+  font-weight: 600;
+  color: #444;
+}
+
+.cover-letter-form input {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.cover-letter-form input:focus {
+  border-color: #2563eb;
+}
+
+.cover-letter-form button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cover-letter-form button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.cover-letter-form button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.cover-letter-output {
+  margin-top: 30px;
+}
+
+.cover-letter-output h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.cover-letter-output textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 15px;
+  font-size: 15px;
+  line-height: 1.6;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.cover-letter-output button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #16a34a;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cover-letter-output button:hover {
+  background: #15803d;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Resume } from "../../types/resume";
+import "../../styles/CoverLetter.css";
 
 interface CoverLetterProps {
   resume: Resume;
