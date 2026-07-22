@@ -2,8 +2,12 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import Groq from "groq-sdk";
+import connectDB from "./config/db.js";
+import { connect } from "node:http2";
 
 dotenv.config();
+
+connectDB();
 
 const app = express();
 
