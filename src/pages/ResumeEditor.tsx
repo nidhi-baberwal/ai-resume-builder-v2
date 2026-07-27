@@ -28,6 +28,10 @@ export default function ResumeEditor(){
 
     const [loadingAI, setLoadingAI] = useState(false);
 
+    const [darkMode, setDarkMode] = useState(()=> {
+      return localStorage.getItem("theme") === "dark";
+    });
+
     const [template, setTemplate] = useState<
     "classic" | "modern" | "ATS" >("classic");
 
@@ -59,6 +63,10 @@ export default function ResumeEditor(){
     useEffect(() => {
      localStorage.setItem("resume", JSON.stringify(resume));
     }, [resume]);
+
+    useEffect(() => {
+      localStorage.setItem("theme", darkMode ? "dark" : "light");
+    }, [darkMode]);
 
     const atsResult = checkATS(resume);
 
@@ -131,7 +139,7 @@ const handleImproveResume = async () => {
 };
 
     return (
-        <div className="container">
+        <div className= {`container ${darkMode ? "dark" : ""}`}>
 
     <div className="form-panel">
         <h2>Resume Form</h2>
@@ -168,6 +176,12 @@ const handleImproveResume = async () => {
     </div>
 
 <div className="toolbar-panel">
+
+  <button 
+  onClick={() => setDarkMode(!darkMode)}
+  >
+    {darkMode ? "Light Mode" : "Dark Mode"}
+  </button>
 
     <TemplateToolbar
   template = {template}

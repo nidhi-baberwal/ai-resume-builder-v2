@@ -119,3 +119,45 @@
     page-break-inside: avoid;
   }
 }
+
+/*DARK MODE - MODERN TEMPLATE*/
+
+.container.dark .resume-card {
+  background: #1e1e1e;
+  color: #f3f4f6;
+  border: 1px solid #444;
+}
+
+.container.dark .modern-header {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+}
+
+.container.dark .resume-card h2 {
+  color: #60a5fa;
+  border-bottom: 2px solid #60a5fa;
+}
+
+.container.dark .resume-card h3 {
+  color: #ffffff;
+}
+
+.container.dark .resume-card p {
+  color: #d1d5db;
+}
+
+.container.dark .resume-card strong {
+  color: #e5e7eb;
+}
+
+.container.dark .skill {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.container.dark .resume-card a {
+  color: #93c5fd;
+}
+
+.container.dark .resume-card a:hover {
+  color: #bfdbfe;
+}

@@ -22,6 +22,11 @@ body {
   align-items: flex-start;
 }
 
+.container.dark{
+  background: #121212;
+  color: white;
+}
+
 /*FORM PANEL*/
 
 .form-panel {
@@ -32,6 +37,11 @@ body {
   height: 92vh;
   overflow-y: auto;
 }
+
+.container.dark .form-panel  {
+  background: #1e1e1e;
+  color: white;
+}           
 
 .form-panel h2 {
   color: #2563eb;
@@ -60,6 +70,13 @@ select {
   border-radius: 10px;
   font-size: 15px;
   transition: .3s;
+}
+
+.container.dark input,
+.container.dark textarea{
+  background: #2a2a2a;
+  color: white;
+  border: 1px solid #555;
 }
 
 textarea {
@@ -94,6 +111,11 @@ button {
   transition: .3s;
 }
 
+.container.dark button{
+  background: #333;
+  color: white;
+}
+
 button:hover {
   background: #1d4ed8;
   transform: translateY(-2px);
@@ -107,6 +129,10 @@ button:hover {
   top: 25px;
   display: flex;
   justify-content: center;
+}
+
+.container.dark .toolbar-panel {
+  background: #1e1e1e;
 }
 
 .toolbar button {
@@ -129,6 +155,48 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/*DARK MODE - PREVIEW PANEL*/
+
+.container.dark .preview-panel {
+  background: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.container.dark .resume-content {
+  background: #1e1e1e;
+}
+
+.container.dark .resume-section h2 {
+  color: #60a5fa;
+  border-bottom: 2px solid #60a5fa;
+}
+
+.container.dark .resume-section h4 {
+  color: #f9fafb;
+}
+
+.container.dark .resume-section p,
+.container.dark .resume-section li {
+  color: #d1d5db;
+}
+
+.container.dark .project-card {
+  background: #2a2a2a;
+  border: 1px solid #555;
+}
+
+.container.dark .education-card,
+.container.dark .experience-card {
+  border-left-color: #60a5fa;
+}
+
+.container.dark .skill-tag {
+  background: #3b82f6;
+  color: #ffffff;
 }
 
 .ai-suggestions{

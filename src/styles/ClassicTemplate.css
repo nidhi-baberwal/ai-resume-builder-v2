@@ -70,3 +70,39 @@
   margin: 3px 0;
   color: #555;
 }
+
+/*DARK MODE - CLASSIC TEMPLATE*/
+
+.container.dark .resume-card {
+  background: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.container.dark .resume-name {
+  color: #ffffff;
+}
+
+.container.dark .contact-info,
+.container.dark .contact-info span {
+  color: #d1d5db;
+}
+
+.container.dark .section h2 {
+  color: #60a5fa;
+  border-bottom: 2px solid #60a5fa;
+}
+
+.container.dark .section p,
+.container.dark .section li {
+  color: #d1d5db;
+}
+
+.container.dark .resume-item h4 {
+  color: #ffffff;
+}
+
+.container.dark .resume-item p {
+  color: #d1d5db;
+}
