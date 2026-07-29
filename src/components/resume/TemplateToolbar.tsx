@@ -7,6 +7,8 @@ type Props = {
   setTemplate: Dispatch<SetStateAction<Template>>;
 };
 
+const templates: Template[] = ["classic", "modern", "ATS"];
+
 export default function TemplateToolbar({
   template,
   setTemplate,
@@ -14,26 +16,15 @@ export default function TemplateToolbar({
   return (
     <div className="toolbar">
 
-      <button
-        className={template === "classic" ? "active" : ""}
-        onClick={() => setTemplate("classic")}
-      >
-        Classic
-      </button>
-
-      <button
-        className={template === "modern" ? "active" : ""}
-        onClick={() => setTemplate("modern")}
-      >
-        Modern
-      </button>
-
-      <button
-        className={template === "ATS" ? "active" : ""}
-        onClick={() => setTemplate("ATS")}
-      >
-        ATS
-      </button>
+      {templates.map((item) => (
+        <button
+          key={item}
+          className={template === item ? "active" : ""}
+          onClick={() => setTemplate(item)}
+        >
+          {item}
+        </button>
+      ))}
 
     </div>
   );

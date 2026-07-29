@@ -141,6 +141,42 @@ const handleImproveResume = async () => {
     return (
         <div className= {`container ${darkMode ? "dark" : ""}`}>
 
+    <div className="top-toolbar">
+
+      <div className="toolbar-left">
+        <h2>Resume Builder</h2>
+      </div>
+
+      <div className="toolbar-center">
+      <TemplateToolbar
+      template = {template}
+      setTemplate = {setTemplate}
+      />
+      </div>
+
+  <div className="toolbar-right">
+  <button 
+  onClick={() => setDarkMode(!darkMode)}
+  >
+    {darkMode ? "Light Mode" : "Dark Mode"}
+  </button>
+
+    <button onClick={downloadPDF}>
+    Download PDF
+  </button>
+
+  <button 
+  onClick={handleImproveResume}
+  disabled={loadingAI}
+  >
+    {loadingAI ? "Improving..." : "Improve Resume with AI"}
+  </button>
+
+</div>
+</div>
+
+<div className="main-content">
+
     <div className="form-panel">
         <h2>Resume Form</h2>
         <PersonalInfoForm 
@@ -175,29 +211,10 @@ const handleImproveResume = async () => {
 
     </div>
 
-<div className="toolbar-panel">
-
-  <button 
-  onClick={() => setDarkMode(!darkMode)}
-  >
-    {darkMode ? "Light Mode" : "Dark Mode"}
-  </button>
-
-    <TemplateToolbar
-  template = {template}
-  setTemplate = {setTemplate}
+<div className="preview-column">
+  <ATSScore 
+  result={atsResult}
   />
-
-  <button onClick={downloadPDF}>
-    Download PDF
-  </button>
-
-  <button 
-  onClick={handleImproveResume}
-  disabled={loadingAI}
-  >
-    {loadingAI ? "Improving..." : "Improve Resume with AI"}
-  </button>
 
   {suggestions.length > 0 && (
 
@@ -218,15 +235,7 @@ const handleImproveResume = async () => {
 </ul>
 
 </div>
-
-)}
-</div>
-
-
-  <div className="preview-column">
-  <ATSScore 
-  result={atsResult}
-  />
+  )}
 
   <ResumePreview
   template = {template}
@@ -239,6 +248,6 @@ const handleImproveResume = async () => {
   />
   </div>
 </div>
+</div>
 );
 }
-
