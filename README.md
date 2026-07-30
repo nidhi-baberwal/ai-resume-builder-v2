@@ -1,75 +1,221 @@
-# React + TypeScript + Vite
+# AI Resume Builder 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered resume builder built with React and TypeScript that helps users create professional resumes, check ATS compatibility, improve resume content with AI suggestions, and export resumes as PDF.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Resume Creation
+- Create resumes with personal information, education, experience, skills, and projects
+- Real-time resume preview
+- Multiple resume templates:
+  - Classic Template
+  - Modern Template
+  - ATS Friendly Template
 
-## React Compiler
+### AI Features
+- AI-powered resume improvement suggestions
+- AI-generated resume summary
+- Loading states and error handling for AI requests
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ATS Resume Checker
+- Checks resume content for ATS compatibility
+- Provides suggestions to improve resume quality
+- Displays ATS score
 
-## Expanding the ESLint configuration
+### Customization
+- Dark mode support
+- Template switching
+- Responsive UI design
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Export
+- Download resume as PDF
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Data Storage
+- Resume data is stored using browser Local Storage
+- No account required
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Tech Stack
 
-```
+## Frontend
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React.js
+- TypeScript
+- Vite
+- CSS3
+- HTML2Canvas
+- jsPDF
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Backend
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js
+- Express.js
+- OpenAI API integration
+
+## Tools
+
+- Git & GitHub
+- VS Code
+
+---
+
+# Project Structure
 
 ```
+ai-resume-builder/
+
+├── src/
+│   ├── components/
+│   │   ├── resume/
+│   │   ├── templates/
+│   │   ├── ats/
+│   │   └── coverLetter/
+│   │
+│   ├── pages/
+│   │   └── ResumeEditor.tsx
+│   │
+│   ├── styles/
+│   │
+│   ├── types/
+│   │
+│   └── utils/
+│
+├── server/
+│   ├── server.js
+│   └── routes/
+│
+└── package.json
+```
+
+---
+
+# Installation and Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/your-username/ai-resume-builder.git
+```
+
+Go inside project folder:
+
+```bash
+cd ai-resume-builder
+```
+
+---
+
+## Frontend Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run frontend:
+
+```bash
+npm run dev
+```
+
+Application will run on:
+
+```
+http://localhost:5173
+```
+
+---
+
+## Backend Setup
+
+Go to server folder:
+
+```bash
+cd server
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create `.env` file:
+
+```
+PORT=5000
+OPENAI_API_KEY=your_api_key
+```
+
+Start backend:
+
+```bash
+node server.js
+```
+
+Backend runs on:
+
+```
+http://localhost:5000
+```
+
+---
+
+#  Screenshots
+
+## Resume Editor
+
+![Resume Editor](screenshots/editor.png)
+
+## Resume Templates
+
+![Resume Templates](screenshots/templates.png)
+
+## ATS Score Checker
+
+![ATS Score](screenshots/ats-score.png)
+
+## Dark Mode
+
+![Dark Mode](screenshots/dark-mode.png)
+
+---
+
+# Future Improvements
+
+- User authentication
+- Cloud resume storage
+- PostgreSQL database integration
+- Resume history
+- More professional templates
+- Job description based resume optimization
+
+---
+
+# Learning Outcomes
+
+Through this project I learned:
+
+- Building scalable React components
+- TypeScript interfaces and type safety
+- Managing complex form state
+- Creating reusable components
+- Working with APIs
+- PDF generation in React
+- AI API integration
+- Responsive UI design
+
+---
+
+#  Author
+
+**Nidhi**
+
+GitHub:
+https://github.com/nidhi-baberwal
+
+---
+
+⭐ If you like this project, consider giving it a star!
