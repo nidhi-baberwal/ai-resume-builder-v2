@@ -2,6 +2,10 @@
 
 An AI-powered resume builder built with React and TypeScript that helps users create professional resumes, check ATS compatibility, improve resume content with AI suggestions, and export resumes as PDF.
 
+## Live Demo
+- **Frontend: **
+
+
 ## Features
 
 ### Resume Creation
@@ -51,7 +55,7 @@ An AI-powered resume builder built with React and TypeScript that helps users cr
 
 - Node.js
 - Express.js
-- OpenAI API integration
+- Groq API integration
 
 ## Tools
 
@@ -95,7 +99,7 @@ ai-resume-builder/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/ai-resume-builder.git
+git clone https://github.com/nidhi-baberwal/ai-resume-builder-v2.git
 ```
 
 Go inside project folder:
@@ -146,7 +150,7 @@ Create `.env` file:
 
 ```
 PORT=5000
-OPENAI_API_KEY=your_api_key
+GROQ_API_KEY=your_api_key
 ```
 
 Start backend:
@@ -162,6 +166,19 @@ http://localhost:5000
 ```
 
 ---
+
+# Deployment
+
+## Frontend
+- Vercel
+
+## Local Development
+
+Frontend:
+http://localhost:5173
+
+Backend:
+http://localhost:5000
 
 #  Screenshots
 
