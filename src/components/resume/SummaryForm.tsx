@@ -13,7 +13,7 @@ export default function SummaryForm({
 
      const [loading, setLoading] = useState(false);
 
-     const [ error, setError] = useState("");
+     const [ , setError] = useState("");
 
     const handleChange = 
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
