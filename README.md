@@ -3,7 +3,7 @@
 An AI-powered resume builder built with React and TypeScript that helps users create professional resumes, check ATS compatibility, improve resume content with AI suggestions, and export resumes as PDF.
 
 ## Live Demo
-- **Frontend: **ai-resume-builder-v2-delta.vercel.app
+Frontend: [AI Resume Builder](https://ai-resume-builder-v2-delta.vercel.app)
 
 
 ## Features
